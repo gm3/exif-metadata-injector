@@ -199,29 +199,6 @@ if (imageData == null || imageData.Length == 0)
     }
 }
 ```
-This code adds public string variables for each of the EXIF metadata tags, which can be set in the inspector. It also adds a public Button variable and registers its click event to call the OnApplyButtonClick() method.
-
-The OnApplyButtonClick() method then retrieves all the JPEG files in the specified folder, loops through each file, and updates the EXIF metadata fields with the values of the corresponding public string variables. Finally, it writes the updated metadata back to each file.
-
-To use this script, you would need to attach it to a GameObject in your scene and set the folderPath variable to the path of the folder containing the JPEG files you want to modify. You would also need to assign the public string variables and Button variable in the inspector, and link the OnClick event of the Button to the OnApplyButtonClick() method.
-
-
-
-
-Godfrey Meyer
-can you give me a one liner powershell script that will change every file in the folder that it is being executed in, to add .png to all the files in the folder
-Sure! Here's a PowerShell one-liner that will add ".png" to the end of all file names in the current directory:
-
-bash
-Copy code
-Get-ChildItem | Rename-Item -NewName { $_.Name + '.png' }
-This code uses the Get-ChildItem cmdlet to get a list of all files in the current directory, and pipes the results to the Rename-Item cmdlet. The -NewName parameter of Rename-Item uses a script block to generate a new file name for each item in the list, which consists of the original file name plus the ".png" extension.
-
-Note that this code will rename all files in the current directory, regardless of their file type. If you only want to rename specific file types (e.g. ".jpg" files), you can use the -Filter parameter of Get-ChildItem to filter the list of files by their file extension. For example, to rename only ".jpg" files, you can use this command:
-
-sql
-Copy code
-Get-ChildItem -Filter *.jpg | Rename-Item -NewName { $_.Name + '.png' }
 
 
 
