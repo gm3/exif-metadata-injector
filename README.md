@@ -1,5 +1,7 @@
 Warning this code is broken, and isnt workin, its messing up the imaages and I dont know why
 
+https://exiftool.org/
+
 
 ```csharp
 using System;
